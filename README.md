@@ -1,21 +1,19 @@
-# mqdc-app-portal
+# MQDC App Portal
+MQDC App Portal was created to handle neccessary information of MQDC App, 101 Thirdplace App. It's also base for admin management system.
 
-## Project setup
-```
-npm install
-```
+## How do I get set up? ##
+The project stack is built using vue-cli webpack so to get started all you have to do is:
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
-```
+# Install dependencies
+> npm install
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# Compiles and hot-reloads for development
+> npm run serve
 
-### Lints and fixes files
-```
-npm run lint
+# Compiles and minifies for production
+> npm run build
+
+# Lints and fixes files
+> npm run lint
 ```
