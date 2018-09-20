@@ -13,7 +13,7 @@
 				<ul class="nav navbar-nav">
 					<h3 class="menu-title">Shop Management</h3>
 					<li class="menu-item-has-children dropdown">
-						<router-link to="/shop-list" tag="a" :active-class="dropdown-toggle">
+						<router-link to="/shop" tag="a">
 							<i class="menu-icon fa fa-shopping-bag"></i>Shop
 						</router-link>
 					</li>

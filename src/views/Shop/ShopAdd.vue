@@ -23,27 +23,27 @@
         </div>
       </div>
       <div class="content mt-3">
-        <SubContentDashboard v-bind:pageContent="pageName"/>
+        <SubContentAddShop v-bind:pageContent="pageName"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import LeftPanel from '@/components/LeftPanel.vue'
-import HeaderMenu from '@/components/HeaderMenu.vue'
-import SubContentDashboard from '@/components/SubContent/Home/ListLayout.vue';
+  // @ is an alias to /src
+  import LeftPanel from '@/components/LeftPanel.vue'
+  import HeaderMenu from '@/components/HeaderMenu.vue'
+  import SubContentAddShop from '@/components/SubContent/Shop/AddLayout.vue';
 
-export default {
-  name: 'home',
-  props: {
-    pageName: 'Home'
-  },
-  components: {
-    LeftPanel,
-    HeaderMenu,
-    SubContentDashboard
+  export default {
+    name: 'shop-add',
+    props: {
+      pageName: 'Shop Add'
+    },
+    components: {
+      LeftPanel,
+      HeaderMenu,
+      SubContentAddShop
+    }
   }
-}
 </script>
