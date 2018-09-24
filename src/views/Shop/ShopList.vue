@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <LeftPanel/>
-
     <div id="right-panel" class="right-panel col">
       <HeaderMenu/>
       <div class="breadcrumbs">
@@ -9,15 +8,6 @@
           <div class="page-header float-left">
             <div class="page-title">
               <h1>{{ pageName }}</h1>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="page-header float-right">
-            <div class="page-title">
-              <ol class="breadcrumb text-right">
-                <li class="active">{{ pageName }}</li>
-              </ol>
             </div>
           </div>
         </div>
@@ -30,16 +20,18 @@
 </template>
 
 <script>
-  // @ is an alias to /src
-  import LeftPanel from '@/components/LeftPanel.vue'
-  import HeaderMenu from '@/components/HeaderMenu.vue'
-  import SubContentShop from '@/components/SubContent/Shop/ListLayout.vue';
+	// @ is an alias to /src
+	import LeftPanel from '@/components/LeftPanel.vue';
+	import HeaderMenu from '@/components/HeaderMenu.vue';
+	import SubContentShop from '@/components/SubContent/Shop/ListLayout.vue';
 
-  export default {
+	export default {
     name: 'shop',
-    props: {
-      pageName: 'Shop'
-    },
+		data(){
+			return {
+				pageName: 'List Shop',
+			};
+		},
     components: {
       LeftPanel,
       HeaderMenu,
