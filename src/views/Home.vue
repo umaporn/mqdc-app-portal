@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="content mt-3">
-        <SubContentDashboard v-bind:pageContent="pageName"/>
+        <SubContentDashboard :pageContent="pageName"/>
       </div>
     </div>
   </div>
@@ -35,6 +35,6 @@
     LeftPanel,
     HeaderMenu,
     SubContentDashboard
-  }
+  },
 }
 </script>

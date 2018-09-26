@@ -29,13 +29,13 @@
     name: 'shop',
 		data(){
 			return {
-				pageName: 'List Shop',
+				pageName: 'List Shop'
 			};
 		},
     components: {
       LeftPanel,
       HeaderMenu,
       SubContentShop
-    }
+    },
   }
 </script>
