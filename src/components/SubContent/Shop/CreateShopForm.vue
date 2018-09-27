@@ -76,10 +76,12 @@
 </template>
 
 <script>
+
 	export default {
 		name:  'create-shop-form',
 		props: {
 			language: String,
 		},
+
 	};
 </script>
