@@ -7,33 +7,35 @@
 				<div class="col-sm-4">
 					<div class="page-header float-left">
 						<div class="page-title">
-							<h1>Home</h1>
+							<h1>{{ pageName }}</h1>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="content mt-3">
-				<SubContentDashboard :pageContent="pageName"/>
+				<SubContentShop v-bind:pageContent="pageName"/>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-
+	// @ is an alias to /src
 	import LeftPanel from '@/components/LeftPanel.vue';
 	import HeaderMenu from '@/components/HeaderMenu.vue';
-	import SubContentDashboard from '@/components/SubContent/Home/ListLayout.vue';
+	import SubContentShop from '@/components/SubContent/Shop/ListLayout.vue';
 
 	export default {
-		name: 'home',
-		props: {
-			pageName: 'Home',
+		name: 'shop',
+		data(){
+			return {
+				pageName: 'List Shop'
+			};
 		},
 		components: {
 			LeftPanel,
 			HeaderMenu,
-			SubContentDashboard
+			SubContentShop
 		},
 	}
 </script>
