@@ -1,11 +1,16 @@
-import { state } from './state';
 import { actions } from './actions';
 import { mutations } from './mutations';
 import { getters } from './getters';
 
-export const home = {
+const initialState = {
+	status: '',
+	token: localStorage.getItem('token') || '',
+	user : {}
+}
+
+export const authentication = {
 	namespaced: true,
-	state,
+	state: initialState,
 	actions,
 	mutations,
 	getters,

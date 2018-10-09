@@ -11,7 +11,8 @@ import axios from 'axios';
 let config = {
 	baseURL: process.env.VUE_APP_BASE_URI || "",
 	timeout: 60 * 1000, // Timeout
-	withCredentials: true, // Check cross-site Access-Control
+	headers: { 'Accept': 'application/json' },
+	withCredentials: false, // Check cross-site Access-Control
 };
 
 const _axios = axios.create( config );
