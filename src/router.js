@@ -19,11 +19,10 @@ let router = new Router({
   ]
 })
 
-
 router.beforeEach((to, from, next) => {
 	store.dispatch('authentication/authentication')
 	if(to.matched.some(record => record.meta.requiresAuth)) {
-		if (store.getters.isLoggedIn) {
+		if (store.getters.authStatus) {
 			next()
 			return
 		}

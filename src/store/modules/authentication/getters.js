@@ -1,7 +1,3 @@
-const getters = {
-	isLoggedIn: state => !!state.token,
-	authStatus: state => state.status,
-};
-export {
-	getters,
+export const getters = {
+	authStatus: state => !!state.clientToken,
 };

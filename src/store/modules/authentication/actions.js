@@ -1,19 +1,18 @@
 import axios from 'axios';
 
-const actions = {
+export const actions = {
 	authentication( { commit } ){
 		return new Promise( ( resolve, reject ) =>{
 			commit( 'auth_request' );
-			axios.post( 'http://dev.api.mqdcapp.com:3002/api/v2/mqdc/client/authenticate', {
+			axios.post( 'http://'+`${ process.env.VUE_APP_BASE_URI }`+'client/authenticate', {
 				username: process.env.VUE_APP_API_USERNAME,
 				password: process.env.VUE_APP_API_PASSWORD,
 			}  )
 				.then( response =>{
-					const token = response.data.token;
-					const user  = response.data.user;
-					localStorage.setItem( 'token', token );
-					axios.defaults.headers.common['Authorization'] = token;
-					commit( 'auth_success', token, user );
+					const data = response.data;
+					localStorage.setItem( 'token', data.token );
+					axios.defaults.headers.common['Authorization'] = data.token;
+					commit( 'auth_success', data );
 					resolve( response );
 				} )
 				.catch( error =>{
@@ -23,8 +22,4 @@ const actions = {
 				} );
 		} );
 	},
-};
-
-export {
-	actions,
 };
