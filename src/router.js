@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/Home'
+import Login from './views/Login'
 import store from './store'
 
 Vue.use(Router)
@@ -16,6 +17,14 @@ let router = new Router({
 				requiresAuth: false
 			}
     },
+		{
+			path: '/login',
+			name: 'login',
+			component: Login,
+			meta: {
+				requiresAuth: false
+			}
+		},
   ]
 })
 

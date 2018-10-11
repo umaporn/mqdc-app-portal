@@ -10,14 +10,14 @@ export const actions = {
 			}  )
 				.then( response =>{
 					const data = response.data;
-					localStorage.setItem( 'token', data.token );
-					axios.defaults.headers.common['Authorization'] = data.token;
+					localStorage.setItem( 'clientToken', data.token );
+					axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;
 					commit( 'auth_success', data );
 					resolve( response );
 				} )
 				.catch( error =>{
 					commit( 'auth_error' );
-					localStorage.removeItem( 'token' );
+					localStorage.removeItem( 'clientToken' );
 					reject( error );
 				} );
 		} );

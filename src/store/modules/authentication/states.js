@@ -1,5 +1,5 @@
 export const states = {
 	status: '',
-	clientToken: localStorage.getItem('token') || '',
+	clientToken: localStorage.getItem('clientToken') || '',
 	user : {}
 };
