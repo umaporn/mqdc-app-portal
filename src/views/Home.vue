@@ -21,19 +21,19 @@
 
 <script>
 
-	import LeftPanel from '@/components/LeftPanel.vue';
-	import HeaderMenu from '@/components/HeaderMenu.vue';
-	import SubContentDashboard from '@/components/SubContent/Home/ListLayout.vue';
+import LeftPanel from '@/components/LeftPanel.vue';
+import HeaderMenu from '@/components/HeaderMenu.vue';
+import SubContentDashboard from '@/components/SubContent/Home/ListLayout.vue';
 
-	export default {
-		name: 'home',
-		props: {
-			pageName: 'Home',
-		},
-		components: {
-			LeftPanel,
-			HeaderMenu,
-			SubContentDashboard
-		},
-	}
+export default {
+	name: 'home',
+	props: {
+		pageName: 'Home',
+	},
+	components: {
+		LeftPanel,
+		HeaderMenu,
+		SubContentDashboard,
+	},
+};
 </script>

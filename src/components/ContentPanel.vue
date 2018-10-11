@@ -4,15 +4,15 @@
 
 <script>
 
-	import ListLayout from '@/components/subContent/Shop/ListLayout.vue';
+import ListLayout from '@/components/SubContent/Shop/ListLayout.vue';
 
-	export default {
-		name: 'contentPanel',
-		props: {
-			pageContent: String,
-		},
-		components: {
-			ListLayout,
-		},
-	};
+export default {
+	name: 'contentPanel',
+	props: {
+		pageContent: String,
+	},
+	components: {
+		ListLayout,
+	},
+};
 </script>

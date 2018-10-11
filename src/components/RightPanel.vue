@@ -27,15 +27,15 @@
 
 <script>
 
-	import HeaderMenu from '@/components/HeaderMenu.vue';
+import HeaderMenu from '@/components/HeaderMenu.vue';
 
-	export default {
-		name:       'RightPanel',
-		props:      {
-			pageName: String,
-		},
-		components: {
-			HeaderMenu,
-		},
-	};
+export default {
+	name: 'RightPanel',
+	props: {
+		pageName: String,
+	},
+	components: {
+		HeaderMenu,
+	},
+};
 </script>

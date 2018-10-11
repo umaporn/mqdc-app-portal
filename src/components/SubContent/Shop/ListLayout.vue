@@ -15,7 +15,7 @@
 </template>
 
 <script>
-	export default {
-		name:  'ListLayout',
-	};
+export default {
+	name: 'ListLayout',
+};
 </script>

@@ -20,22 +20,22 @@
 </template>
 
 <script>
-	// @ is an alias to /src
-	import LeftPanel from '@/components/LeftPanel.vue';
-	import HeaderMenu from '@/components/HeaderMenu.vue';
-	import SubContentShop from '@/components/SubContent/Shop/ListLayout.vue';
+// @ is an alias to /src
+import LeftPanel from '@/components/LeftPanel.vue';
+import HeaderMenu from '@/components/HeaderMenu.vue';
+import SubContentShop from '@/components/SubContent/Shop/ListLayout.vue';
 
-	export default {
-		name: 'shop',
-		data(){
-			return {
-				pageName: 'List Shop'
-			};
-		},
-		components: {
-			LeftPanel,
-			HeaderMenu,
-			SubContentShop
-		},
-	}
+export default {
+	name: 'shop',
+	data() {
+		return {
+			pageName: 'List Shop',
+		};
+	},
+	components: {
+		LeftPanel,
+		HeaderMenu,
+		SubContentShop,
+	},
+};
 </script>

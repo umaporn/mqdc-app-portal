@@ -12,10 +12,10 @@
 </template>
 
 <script>
-	export default {
-		name:  'ListLayout',
-		props: {
-			pageContent: String,
-		},
-	};
+export default {
+	name: 'ListLayout',
+	props: {
+		pageContent: String,
+	},
+};
 </script>

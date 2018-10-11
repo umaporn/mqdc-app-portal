@@ -51,7 +51,7 @@
 </template>
 
 <script>
-	export default {
-		name: 'HeaderMenu',
-	};
+export default {
+	name: 'HeaderMenu',
+};
 </script>
