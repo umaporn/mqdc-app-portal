@@ -1,44 +1,44 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home'
-import Login from './views/Login'
-import store from './store'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import Login from './views/Login.vue';
+import store from './store';
 
-Vue.use(Router)
+Vue.use(Router);
 
-let router = new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
+const router = new Router({
+	mode: 'history',
+	routes: [
+		{
+			path: '/',
+			name: 'home',
+			component: Home,
 			meta: {
-				requiresAuth: false
-			}
-    },
+				requiresAuth: false,
+			},
+		},
 		{
 			path: '/login',
 			name: 'login',
 			component: Login,
 			meta: {
-				requiresAuth: false
-			}
+				requiresAuth: false,
+			},
 		},
-  ]
-})
+	],
+});
 
 router.beforeEach((to, from, next) => {
-	store.dispatch('authentication/authentication')
-	if(to.matched.some(record => record.meta.requiresAuth)) {
+	store.dispatch('authentication/authentication');
+	if (to.matched.some(record => record.meta.requiresAuth)) {
 		if (store.getters.authStatus) {
-			next()
-			return
+			next();
+			return;
 		}
-		next('/login')
+		next('/login');
 	} else {
-		next()
+		next();
 	}
-})
+});
 
-export default router
+export default router;

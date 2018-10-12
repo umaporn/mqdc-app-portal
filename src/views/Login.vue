@@ -18,7 +18,7 @@
 							</div>
 							<div class="checkbox">
 								<label class="align-content-center">
-									<a href="#">Forgotten Password?</a>
+									<a href="#" class="text-primary">Forgotten Password?</a>
 								</label>
 							</div>
 							<button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
@@ -43,26 +43,21 @@
 </style>
 
 <script>
-	import { store } from '../store';
-
-	export default {
-		data(){
-			return {
-				email:    '',
-				password: '',
-			};
+export default {
+	data() {
+		return {
+			email: '',
+			password: '',
+		};
+	},
+	methods: {
+		login() {
+			const { email } = this.email;
+			const { password } = this.password;
+			this.$store.dispatch('login/login', { email, password })
+				.then(() => this.$router.push('/'))
+				.catch(error => console.log(error));
 		},
-		methods: {
-			login: function(){
-				let email    = this.email;
-				let password = this.password;
-				this.$store.dispatch( 'login/login', { email, password } )
-				     .then( () => this.$router.push( '/' ) )
-				     .catch( err => console.log( err ) );
-			},
-		},
-	};
+	},
+};
 </script>
-
-
-
