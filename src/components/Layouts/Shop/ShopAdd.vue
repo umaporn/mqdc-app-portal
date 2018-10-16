@@ -7,70 +7,70 @@
       <div class="col col-md-6">
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'name'+language" class=" form-control-label">Shop Name</label>
+            <label :for="'name'" class=" form-control-label">Shop Name</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'name'+language"
-              :name="'name'+language"
-              :placeholder="'Shop Name '+language"
+              :id="'name'"
+              :name="'name'"
+              :placeholder="'Shop Name'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'name'+language" class=" form-control-label">Shop Description</label>
+            <label :for="'name'" class=" form-control-label">Shop Description</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'description'+language"
-              :name="'description'+language"
-              :placeholder="'Shop Description '+language"
+              :id="'description'"
+              :name="'description'"
+              :placeholder="'Shop Description'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'Open Date'+language" class=" form-control-label">Open Date</label>
+            <label :for="'Open Date'" class=" form-control-label">Open Date</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'openDate'+language"
-              :name="'openDate'+language"
-              :placeholder="'Open Date '+language"
+              :id="'openDate'"
+              :name="'openDate'"
+              :placeholder="'Open Date'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'Open Time'+language" class=" form-control-label">Open Time</label>
+            <label :for="'Open Time'" class=" form-control-label">Open Time</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'openTime'+language"
-              :name="'openTime'+language"
-              :placeholder="'Open Time '+language"
+              :id="'openTime'"
+              :name="'openTime'"
+              :placeholder="'Open Time'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'Close Time'+language" class=" form-control-label">Close Time</label>
+            <label :for="'Close Time'" class=" form-control-label">Close Time</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'closeTime'+language"
-              :name="'closeTime'+language"
-              :placeholder="'Close Time '+language"
+              :id="'closeTime'"
+              :name="'closeTime'"
+              :placeholder="'Close Time'"
               class="form-control"
             >
           </div>
@@ -79,84 +79,84 @@
       <div class="col col-md-6">
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'Floor'+language" class=" form-control-label">Floor</label>
+            <label :for="'Floor'" class=" form-control-label">Floor</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'Floor'+language"
-              :name="'Floor'+language"
-              :placeholder="'Floor'+language"
+              :id="'Floor'"
+              :name="'Floor'"
+              :placeholder="'Floor'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'Zone'+language" class=" form-control-label">Zone</label>
+            <label :for="'Zone'" class=" form-control-label">Zone</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'Zone'+language"
-              :name="'Zone'+language"
-              :placeholder="'Zone'+language"
+              :id="'Zone'"
+              :name="'Zone'"
+              :placeholder="'Zone'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'Location'+language" class=" form-control-label">Location</label>
+            <label :for="'Location'" class=" form-control-label">Location</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'Location'+language"
-              :name="'Location'+language"
-              :placeholder="'Location'+language"
+              :id="'Location'"
+              :name="'Location'"
+              :placeholder="'Location'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'contactName'+language" class=" form-control-label">Contact Name</label>
+            <label :for="'contactName'" class=" form-control-label">Contact Name</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'contactName'+language"
-              :name="'contactName'+language"
-              :placeholder="'Contact Name'+language"
+              :id="'contactName'"
+              :name="'contactName'"
+              :placeholder="'Contact Name'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'contactMobile'+language" class=" form-control-label">Contact Mobile</label>
+            <label :for="'contactMobile'" class=" form-control-label">Contact Mobile</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'contactMobile'+language"
-              :name="'contactMobile'+language"
-              :placeholder="'Contact Mobile'+language"
+              :id="'contactMobile'"
+              :name="'contactMobile'"
+              :placeholder="'Contact Mobile'"
               class="form-control"
             >
           </div>
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'contactEmail'+language" class=" form-control-label">Contact Email</label>
+            <label :for="'contactEmail'" class=" form-control-label">Contact Email</label>
           </div>
           <div class="col-12 col-md-9">
             <input
               type="text"
-              :id="'contactEmail'+language"
-              :name="'contactEmail'+language"
-              :placeholder="'Contact Email'+language"
+              :id="'contactEmail'"
+              :name="'contactEmail'"
+              :placeholder="'Contact Email'"
               class="form-control"
             >
           </div>
