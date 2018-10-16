@@ -1,7 +1,6 @@
 <template>
 	<div class="home">
 		<LeftPanel/>
-
 		<div id="right-panel" class="right-panel col">
 			<HeaderMenu/>
 			<div class="breadcrumbs">
@@ -13,30 +12,32 @@
 					</div>
 				</div>
 			</div>
-			<div class="content mt-3">
-				<SubContentAddShop v-bind:pageContent="pageName"/>
+			<div class="content">
+				<ShopAdd :pageName="pageName"/>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-// @ is an alias to /src
+
 import LeftPanel from '@/components/LeftPanel.vue';
 import HeaderMenu from '@/components/HeaderMenu.vue';
-import SubContentAddShop from '@/components/SubContent/Shop/AddLayout.vue';
+import ShopAdd from '@/components/Layouts/Shop/ShopAdd.vue';
+import { mapState } from 'vuex';
 
 export default {
-	name: 'shop-add',
-	data() {
-		return {
-			pageName: 'Create New Shop',
-		};
+	name: 'shop-list',
+	computed: mapState({
+		pageName: state => state.shop.pageName,
+	}),
+	props: {
+		pageName: String,
 	},
 	components: {
 		LeftPanel,
 		HeaderMenu,
-		SubContentAddShop,
+		ShopAdd,
 	},
 };
 </script>

@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import Login from './views/Login.vue';
+import ShopList from './views/Shop/ShopList.vue';
+import ShopAdd from './views/Shop/ShopAdd.vue';
 
 Vue.use(Router);
 
@@ -14,14 +17,19 @@ export default new Router({
 			component: Home,
 		},
 		{
+			path: '/login',
+			name: 'login',
+			component: Login,
+		},
+		{
 			path: '/shop',
 			name: 'shop',
-			component: () => import('./views/Shop/ShopList.vue'),
+			component: ShopList,
 		},
 		{
 			path: '/shop-add',
 			name: 'shop-add',
-			component: () => import('./views/Shop/ShopAdd.vue'),
+			component: ShopAdd,
 		},
 	],
 });

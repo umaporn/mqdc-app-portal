@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="content">
-				<ShopList :pageName="pageName"/>
+				{{ pageName }}
 			</div>
 		</div>
 	</div>
@@ -23,21 +23,15 @@
 
 import LeftPanel from '@/components/LeftPanel.vue';
 import HeaderMenu from '@/components/HeaderMenu.vue';
-import ShopList from '@/components/Layouts/Shop/ShopList.vue';
-import { mapState } from 'vuex';
 
 export default {
-	name: 'shop-list',
-	computed: mapState({
-		pageName: state => state.shop.pageName,
-	}),
+	name: 'home',
 	props: {
 		pageName: String,
 	},
 	components: {
 		LeftPanel,
 		HeaderMenu,
-		ShopList,
 	},
 };
 </script>
