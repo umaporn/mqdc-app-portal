@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="content">
-				<ShopList :pageName="pageName"/>
+				<ShopList/>
 			</div>
 		</div>
 	</div>
@@ -31,9 +31,6 @@ export default {
 	computed: mapState({
 		pageName: state => state.shop.pageName,
 	}),
-	props: {
-		pageName: String,
-	},
 	components: {
 		LeftPanel,
 		HeaderMenu,

@@ -8,14 +8,21 @@
 					</a>
 				</div>
 				<div class="login-form">
-					<form>
+					<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+						<span class="badge badge-pill badge-danger">Error</span>
+							{{ errorText }}
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<form id="submit-login" @submit.prevent="loginSubmission">
 						<div class="form-group">
 							<label>Email address</label>
-							<input type="email" class="form-control" placeholder="Email">
+							<input type="email" v-model="email" class="form-control" placeholder="Email">
 						</div>
 						<div class="form-group">
 							<label>Password</label>
-							<input type="password" class="form-control" placeholder="Password">
+							<input type="password" v-model="password" class="form-control" placeholder="Password">
 						</div>
 						<div class="checkbox">
 							<label>
@@ -46,6 +53,27 @@ export default {
 	components: {
 		LeftPanel,
 		HeaderMenu,
+	},
+	data() {
+		return {
+			email: '',
+			password: '',
+			errorText: '',
+		};
+	},
+	methods: {
+		loginSubmission() {
+			const email = this.email;
+			const password = this.password;
+			const user = { email, password };
+			this.$store.dispatch('login/login', user)
+				.then(() => this.$router.push('/'))
+				.catch((error) => {
+					if (error.response) {
+						this.errorText = error.response.data.message;
+					}
+				});
+		},
 	},
 };
 </script>

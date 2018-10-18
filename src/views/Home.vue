@@ -1,21 +1,26 @@
 <template>
 	<div class="home">
-		<Home :pageName="pageName"/>
+		<Home />
 	</div>
 </template>
 
 <script>
 
+import { mapGetters } from 'vuex';
 import Home from '@/components/Layouts/Home.vue';
-import { mapState } from 'vuex';
 
 export default {
 	name: 'home',
-	computed: mapState({
-		pageName: state => state.home.pageName,
-	}),
 	components: {
 		Home,
+	},
+	computed: {
+		...mapGetters({
+			messages: 'home/messages',
+		}),
+	},
+	mounted() {
+		this.$store.dispatch('home/getMessages');
 	},
 };
 </script>

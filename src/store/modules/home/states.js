@@ -1,5 +1,3 @@
-const state = {
-	pageName: 'Home',
+export default {
+	message: '',
 };
-
-export default state;

@@ -1,4 +1,4 @@
-import state from './state';
+import state from './states';
 
 export default {
 	namespaced: true,

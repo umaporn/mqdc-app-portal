@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="content">
-				<ShopAdd :pageName="pageName"/>
+				<ShopAdd/>
 			</div>
 		</div>
 	</div>
@@ -29,11 +29,8 @@ import { mapState } from 'vuex';
 export default {
 	name: 'shop-list',
 	computed: mapState({
-		pageName: state => state.shop.pageName,
+		pageName: state => state.pageName,
 	}),
-	props: {
-		pageName: String,
-	},
 	components: {
 		LeftPanel,
 		HeaderMenu,

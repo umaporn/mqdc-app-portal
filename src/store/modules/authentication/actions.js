@@ -10,7 +10,6 @@ const action = {
 			})
 				.then((response) => {
 					const data = response.data;
-					console.log(data);
 					localStorage.setItem('clientToken', data.token);
 					axios.defaults.headers.common.Authorization = `Bearer ${data.token}`;
 					commit('auth_success', data);

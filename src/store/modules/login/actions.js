@@ -4,7 +4,7 @@ const action = {
 	login({ commit }, user) {
 		return new Promise((resolve, reject) => {
 			commit('login_request');
-			axios.post('http://' + `${process.env.VUE_APP_BASE_URI}` + 'login', user)
+			axios.post(`http://${process.env.VUE_APP_BASE_URI}login`, user)
 				.then((response) => {
 					const data = response.data.data;
 					localStorage.setItem('userToken', data.token);
