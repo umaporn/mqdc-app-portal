@@ -1,5 +1,7 @@
-export const states = {
+const state = {
 	status: '',
 	clientToken: localStorage.getItem('clientToken') || '',
-	user : {}
+	user: {},
 };
+
+export default state;

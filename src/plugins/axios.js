@@ -1,4 +1,4 @@
-'use strict';
+
 
 import Vue from 'vue';
 import axios from 'axios';
@@ -8,21 +8,21 @@ import axios from 'axios';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-let config = {
-	baseURL: process.env.VUE_APP_BASE_URI || "",
+const config = {
+	baseURL: process.env.VUE_APP_BASE_URI || '',
 	timeout: 60 * 1000, // Timeout
-	headers: { 'Accept': 'application/json' },
+	headers: { Accept: 'application/json' },
 	withCredentials: false, // Check cross-site Access-Control
 };
 
-const _axios = axios.create( config );
+const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
-	function( config ){
+	( config ) => {
 		// Do something before request is sent
 		return config;
 	},
-	function( error ){
+	( error ) => {
 		// Do something with request error
 		return Promise.reject( error );
 	},
@@ -30,33 +30,33 @@ _axios.interceptors.request.use(
 
 // Add a response interceptor
 _axios.interceptors.response.use(
-	function( response ){
+	( response ) => {
 		// Do something with response data
 		return response;
 	},
-	function( error ){
+	( error ) => {
 		// Do something with response error
 		return Promise.reject( error );
 	},
 );
 
-Plugin.install = function( Vue ){
-	Vue.axios    = _axios;
+Plugin.install = function (Vue) {
+	Vue.axios = _axios;
 	window.axios = _axios;
-	Object.defineProperties( Vue.prototype, {
+	Object.defineProperties(Vue.prototype, {
 		axios: {
-			get(){
+			get() {
 				return _axios;
 			},
 		},
 		$axios: {
-			get(){
+			get() {
 				return _axios;
 			},
 		},
-	} );
+	});
 };
 
-Vue.use( Plugin );
+Vue.use(Plugin);
 
 export default Plugin;

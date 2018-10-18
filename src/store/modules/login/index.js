@@ -1,11 +1,11 @@
-import { state } from './state';
-import { actions } from './actions';
-import { mutations } from './mutations';
-import { getters } from './getters';
+import states from './states';
+import actions from './actions';
+import mutations from './mutations';
+import getters from './getters';
 
-export const login = {
+export default {
 	namespaced: true,
-	state,
+	states,
 	actions,
 	mutations,
 	getters,

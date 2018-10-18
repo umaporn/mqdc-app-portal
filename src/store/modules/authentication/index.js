@@ -1,9 +1,9 @@
-import { actions } from './actions';
-import { states } from './states';
-import { mutations } from './mutations';
-import { getters } from './getters';
+import states from './states';
+import actions from './actions';
+import mutations from './mutations';
+import getters from './getters';
 
-export const authentication = {
+export default {
 	namespaced: true,
 	states,
 	actions,
