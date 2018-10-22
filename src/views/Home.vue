@@ -7,7 +7,7 @@
 <script>
 
 import { mapGetters } from 'vuex';
-import Home from '@/components/Layouts/Home.vue';
+import Home from '@/components/layouts/Home.vue';
 
 export default {
 	name: 'home',

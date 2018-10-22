@@ -7,8 +7,8 @@
 						<img class="align-content" src="assets/images/logo-highlight.png" alt="">
 					</a>
 				</div>
-				<div class="login-form">
-					<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+				<div  class="login-form">
+					<div v-if="errorText" class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
 						<span class="badge badge-pill badge-danger">Error</span>
 							{{ errorText }}
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -63,9 +63,10 @@ export default {
 	},
 	methods: {
 		loginSubmission() {
-			const email = this.email;
-			const password = this.password;
+			const email = (this.email !== '') ? this.email : process.env.VUE_APP_API_LOGIN_EMAIL;
+			const password = (this.password !== '') ? this.password : process.env.VUE_APP_API_LOGIN_PASSWORD;
 			const user = { email, password };
+
 			this.$store.dispatch('login/login', user)
 				.then(() => this.$router.push('/'))
 				.catch((error) => {

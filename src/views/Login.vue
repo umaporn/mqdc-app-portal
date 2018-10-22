@@ -6,7 +6,7 @@
 
 <script>
 
-import Login from '@/components/Layouts/Login.vue';
+import Login from '@/components/layouts/Login.vue';
 
 export default {
 	name: 'login',

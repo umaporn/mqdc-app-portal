@@ -23,7 +23,7 @@
 
 import LeftPanel from '@/components/LeftPanel.vue';
 import HeaderMenu from '@/components/HeaderMenu.vue';
-import ShopAdd from '@/components/Layouts/Shop/ShopAdd.vue';
+import ShopAdd from '@/components/layouts/Shop/ShopAdd.vue';
 import { mapState } from 'vuex';
 
 export default {
