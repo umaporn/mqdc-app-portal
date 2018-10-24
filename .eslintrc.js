@@ -14,8 +14,8 @@ module.exports = {
 		indent: [2, 'tab'],
 		'no-tabs': 0,
 		'max-len': ['error', { code: 150 }],
-		"no-param-reassign": 0,
-		"prefer-destructuring": ["error", {"object": false, "array": false}]
+		'no-param-reassign': 0,
+		'prefer-destructuring': ['error', { object: false, array: false }],
 	},
 	parserOptions: {
 		parser: 'babel-eslint',

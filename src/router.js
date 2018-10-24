@@ -5,6 +5,7 @@ import Login from './views/Login.vue';
 import ShopList from './views/Shop/ShopList.vue';
 import ShopAdd from './views/Shop/ShopAdd.vue';
 import store from './store';
+import { mapGetters } from 'vuex';
 
 Vue.use(Router);
 
@@ -16,7 +17,7 @@ const router = new Router({
 			name: 'home',
 			component: Home,
 			meta: {
-				requiresAuth: false,
+				requiresAuth: true,
 			},
 		},
 		{
@@ -31,11 +32,17 @@ const router = new Router({
 			path: '/shop',
 			name: 'shop',
 			component: ShopList,
+			meta: {
+				requiresAuth: true,
+			},
 		},
 		{
 			path: '/shop-add',
 			name: 'shop-add',
 			component: ShopAdd,
+			meta: {
+				requiresAuth: true,
+			},
 		},
 	],
 });
@@ -43,7 +50,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
 	store.dispatch('authentication/authentication');
 	if (to.matched.some(record => record.meta.requiresAuth)) {
-		if (store.getters.authStatus) {
+		if (store.getters['authentication/authStatus']) {
 			next();
 			return;
 		}

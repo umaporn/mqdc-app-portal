@@ -68,7 +68,9 @@ export default {
 			const user = { email, password };
 
 			this.$store.dispatch('login/login', user)
-				.then(() => this.$router.push('/'))
+				.then(() => {
+					this.$router.push('/');
+				})
 				.catch((error) => {
 					if (error.response) {
 						this.errorText = error.response.data.message;
