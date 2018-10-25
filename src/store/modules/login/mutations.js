@@ -6,6 +6,7 @@ const mutation = {
 		state.status = 'success';
 		state.userToken = data.token;
 		state.userExpiredAt = data.expiredAt;
+		state.userProfile = data.userProfile;
 	},
 	login_error(state) {
 		state.status = 'error';

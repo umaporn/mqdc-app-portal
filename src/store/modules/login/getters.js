@@ -1,7 +1,5 @@
 const getters = {
-	loginStatus(state) {
-		return state.userToken;
-	},
+	status: state => !!state.userToken,
 };
 
 export default getters;
