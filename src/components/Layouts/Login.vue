@@ -44,7 +44,7 @@
 </template>
 
 <script>
-
+import { mapGetters, mapState } from 'vuex';
 import LeftPanel from '@/components/LeftPanel.vue';
 import HeaderMenu from '@/components/HeaderMenu.vue';
 
@@ -60,6 +60,12 @@ export default {
 			password: '',
 			errorText: '',
 		};
+	},
+	computed: {
+		...mapState({
+			loginStatus: state => state.status,
+		}),
+		...mapGetters(['login/status']),
 	},
 	methods: {
 		loginSubmission() {

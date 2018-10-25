@@ -1,5 +1,7 @@
-const getter = {
-	status: state => state.status,
+const getters = {
+	loginStatus(state) {
+		return state.userToken;
+	},
 };
 
-export default getter;
+export default getters;

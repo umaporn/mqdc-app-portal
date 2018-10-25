@@ -1,5 +1,5 @@
-const messages = state => state.messages;
+const getMessage = state => `Hello ${state.message}`;
 
 export default {
-	messages,
+	getMessage,
 };

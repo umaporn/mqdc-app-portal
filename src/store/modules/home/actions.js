@@ -1,7 +1,7 @@
-const getMessages = (context) => {
-	context.commit('MESSAGES_UPDATED');
+const actionMessage = (context) => {
+	context.commit('MESSAGES_UPDATED', 'Home Page');
 };
 
 export default {
-	getMessages,
+	actionMessage,
 };

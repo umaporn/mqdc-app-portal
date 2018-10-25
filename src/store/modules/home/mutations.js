@@ -1,5 +1,5 @@
-const MESSAGES_UPDATED = (state) => {
-	state.messages = 'home';
+const MESSAGES_UPDATED = (state, text) => {
+	state.message = text;
 };
 
 export default {
