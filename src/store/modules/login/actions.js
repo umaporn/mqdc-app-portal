@@ -8,6 +8,7 @@ const action = {
 				.then((response) => {
 					const data = response.data.data;
 					localStorage.setItem('userToken', data.token);
+					localStorage.setItem('userEmail', data.userProfile.email);
 					axios.defaults.headers.common.Authorization = data.token;
 					commit('login_success', data);
 					resolve(response);
@@ -17,6 +18,15 @@ const action = {
 					localStorage.removeItem('userToken');
 					reject(error);
 				});
+		});
+	},
+	logout({ commit }) {
+		return new Promise((resolve) => {
+			commit('logout');
+			localStorage.removeItem('userToken');
+			localStorage.removeItem('userEmail');
+			delete axios.defaults.headers.common.Authorization;
+			resolve();
 		});
 	},
 };
