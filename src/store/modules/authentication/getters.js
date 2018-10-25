@@ -1,4 +1,4 @@
 const getter = {
-	authStatus: state => !state.clientToken,
+	status: state => !!state.clientToken,
 };
 export default getter;
