@@ -26,6 +26,7 @@ const action = {
 			commit('logout');
 			localStorage.removeItem('userToken');
 			localStorage.removeItem('userEmail');
+			localStorage.removeItem('userTokenTimestamp');
 			delete axios.defaults.headers.common.Authorization;
 			resolve();
 		});
