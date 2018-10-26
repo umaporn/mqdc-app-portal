@@ -11,6 +11,7 @@ const action = {
 				.then((response) => {
 					const data = response.data;
 					localStorage.setItem('clientToken', data.token);
+					localStorage.setItem('clientTokenTimestamp', data.expiredAt.timestamp);
 					axios.defaults.headers.common.Authorization = `Bearer ${data.token}`;
 					commit('auth_success', data);
 					resolve(response);

@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import moment from 'moment';
+import axios from 'axios';
 import Home from './views/Home.vue';
 import Login from './views/Login.vue';
 import ShopList from './views/Shop/ShopList.vue';
@@ -46,8 +48,15 @@ const router = new Router({
 	],
 });
 
+const clientTokenTimestamp = localStorage.getItem('clientTokenTimestamp') || '';
+const clientToken = localStorage.getItem('clientToken') || '';
+
 router.beforeEach((to, from, next) => {
-	store.dispatch('authentication/authentication');
+	if (!clientTokenTimestamp || moment().unix() === clientTokenTimestamp) {
+		store.dispatch('authentication/authentication');
+	}
+
+	axios.defaults.headers.common.Authorization = `Bearer ${clientToken}`;
 	if (to.matched.some(record => record.meta.requiresAuth)) {
 		if (store.getters['login/status']) {
 			next();
