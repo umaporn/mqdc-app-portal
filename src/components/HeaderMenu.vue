@@ -23,11 +23,7 @@ export default {
 	data() {
 		return {
 			userEmail: localStorage.getItem('userEmail'),
-			userAvatar: localStorage.getItem('userAvater'),
 		};
-	},
-	computed: {
-
 	},
 	methods: {
 		logout() {

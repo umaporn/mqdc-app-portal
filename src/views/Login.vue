@@ -10,9 +10,6 @@ import Login from '@/components/layouts/Login.vue';
 
 export default {
 	name: 'login',
-	props: {
-		pageName: 'Login',
-	},
 	components: {
 		Login,
 	},

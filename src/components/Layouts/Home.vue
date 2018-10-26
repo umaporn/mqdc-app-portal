@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="content">
-				<p>{{message}}</p>
+				<p>{{getMessage}}</p>
 			</div>
 		</div>
 	</div>
@@ -21,7 +21,7 @@
 
 <script>
 
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import LeftPanel from '@/components/LeftPanel.vue';
 import HeaderMenu from '@/components/HeaderMenu.vue';
 
@@ -32,8 +32,9 @@ export default {
 		HeaderMenu,
 	},
 	computed: {
-		...mapGetters('home', ['getMessage']),
-		...mapState('home', ['message']),
+		...mapGetters({
+			getMessage: 'home/getMessage',
+		}),
 	},
 	mounted() {
 		this.$store.dispatch('home/actionMessage');

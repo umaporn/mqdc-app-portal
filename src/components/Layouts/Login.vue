@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
 import LeftPanel from '@/components/LeftPanel.vue';
 import HeaderMenu from '@/components/HeaderMenu.vue';
 
@@ -50,16 +49,10 @@ export default {
 			errorText: '',
 		};
 	},
-	computed: {
-		...mapState({
-			loginStatus: state => state.status,
-		}),
-		...mapGetters(['login/status']),
-	},
 	methods: {
 		loginSubmission() {
-			const email = (this.email !== '') ? this.email : process.env.VUE_APP_API_LOGIN_EMAIL;
-			const password = (this.password !== '') ? this.password : process.env.VUE_APP_API_LOGIN_PASSWORD;
+			const email = this.email || process.env.VUE_APP_API_LOGIN_EMAIL;
+			const password = this.password || process.env.VUE_APP_API_LOGIN_PASSWORD;
 			const user = { email, password };
 
 			this.$store.dispatch('login/login', user)

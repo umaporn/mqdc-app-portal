@@ -1,4 +1,6 @@
-import state from './states';
+const state = {
+	pageName: 'Shop',
+};
 
 export default {
 	namespaced: true,
