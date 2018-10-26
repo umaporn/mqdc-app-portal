@@ -8,6 +8,7 @@ const action = {
 				.then((response) => {
 					const data = response.data.data;
 					localStorage.setItem('userToken', data.token);
+					localStorage.setItem('userTokenTimestamp', data.expiredAt.timestamp);
 					localStorage.setItem('userEmail', data.userProfile.email);
 					axios.defaults.headers.common.Authorization = data.token;
 					commit('login_success', data);
