@@ -6,7 +6,7 @@
 
 <script>
 
-import Home from '@/components/layouts/Home.vue';
+import Home from '@/components/Layouts/Home.vue';
 
 export default {
 	name: 'home',
