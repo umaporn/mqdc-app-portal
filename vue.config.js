@@ -1,9 +1,9 @@
 module.exports = {
-  pluginOptions: {
-    moment: {
-      locales: [
-        'en'
-      ]
-    }
-  }
-}
+	pluginOptions: {
+		moment: {
+			locales: [
+				'en',
+			],
+		},
+	},
+};
