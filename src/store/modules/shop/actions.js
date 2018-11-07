@@ -2,12 +2,14 @@ import axios from 'axios';
 
 const action = {
 	shoplist({ commit }) {
+		console.log('shoplist');
 		return new Promise((resolve, reject) => {
 			commit('shoplist_request');
-			axios.post(`http://${process.env.VUE_APP_BASE_URI}shops`)
+			axios.get(`http://${process.env.VUE_APP_BASE_URI}shops`)
 				.then((response) => {
 					const data = response.data.data;
-					commit('shoplist', data);
+					console.log(data);
+					commit('shoplist_success', data);
 					resolve(response);
 				})
 				.catch((error) => {

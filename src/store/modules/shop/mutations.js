@@ -4,9 +4,7 @@ const mutation = {
 	},
 	shoplist_success(state, data) {
 		state.status = 'success';
-		state.userToken = data.token;
-		state.userExpiredAt = data.expiredAt;
-		state.userProfile = data.userProfile;
+		state.shopList = data;
 	},
 	shoplist_error(state) {
 		state.status = 'error';
