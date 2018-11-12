@@ -35,6 +35,36 @@
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
+            <label :for="'logo'" class=" form-control-label">Logo</label>
+          </div>
+          <div class="col-12 col-md-9">
+            <input
+              type="file"
+              :id="'logo'"
+              :name="'logo'"
+              :placeholder="'Logo'"
+              class="form-control"
+            >
+          <i>Scale for image should be 1:1</i>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col col-md-3">
+            <label :for="'cover'" class=" form-control-label">Cover</label>
+          </div>
+          <div class="col-12 col-md-9">
+            <input
+              type="file"
+              :id="'cover'"
+              :name="'cover'"
+              :placeholder="'Cover'"
+              class="form-control"
+            >
+            <i>Scale for image should be 4:3</i>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col col-md-3">
             <label :for="'Open Date'" class=" form-control-label">Open Date</label>
           </div>
           <div class="col-12 col-md-9">
