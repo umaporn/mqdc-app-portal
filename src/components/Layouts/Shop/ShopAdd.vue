@@ -4,6 +4,7 @@
       <a class="text-dark" href="/shop">Shop List</a> / Shop Creation Form
     </div>
     <div class="card-body">
+      <form id="submit-create-shop" @submit.prevent="createShopSubmission">
       <div class="col col-md-6">
         <div class="row form-group">
           <div class="col col-md-3">
@@ -29,6 +30,34 @@
               :id="'description'"
               :name="'description'"
               :placeholder="'Shop Description'"
+              class="form-control"
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col col-md-3">
+            <label :for="'Logo'" class=" form-control-label">Logo</label>
+          </div>
+          <div class="col-12 col-md-9">
+            <input
+              type="file"
+              :id="'logo'"
+              :name="'logo'"
+              :placeholder="'Logo'"
+              class="form-control"
+            >
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col col-md-3">
+            <label :for="'Cover'" class=" form-control-label">Cover</label>
+          </div>
+          <div class="col-12 col-md-9">
+            <input
+              type="file"
+              :id="'cover'"
+              :name="'cover'"
+              :placeholder="'Cover'"
               class="form-control"
             >
           </div>
@@ -170,12 +199,31 @@
           <i class="fa fa-ban"></i> Reset
         </button>
       </div>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-	name: 'create-shop-form',
+	name: 'ShopAdd',
+	methods: {
+		createShopSubmission() {
+			const email = this.email || process.env.VUE_APP_API_LOGIN_EMAIL;
+			const password = this.password || process.env.VUE_APP_API_LOGIN_PASSWORD;
+			const user = { email, password };
+
+			this.$store
+				.dispatch('login/login', user)
+				.then(() => {
+					this.$router.push('/');
+				})
+				.catch((error) => {
+					if (error.response) {
+						this.errorText = error.response.data.message;
+					}
+				});
+		},
+	},
 };
 </script>
