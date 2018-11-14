@@ -22,7 +22,7 @@
         </div>
         <div class="row form-group">
           <div class="col col-md-3">
-            <label :for="'name'" class=" form-control-label">Shop Description</label>
+            <label :for="'description'" class=" form-control-label">Shop Description</label>
           </div>
           <div class="col-12 col-md-9">
             <input
@@ -114,7 +114,7 @@
             <input
               type="text"
               :id="'Floor'"
-              :name="'Floor'"
+              :name="'floor'"
               :placeholder="'Floor'"
               class="form-control"
             >
@@ -128,7 +128,7 @@
             <input
               type="text"
               :id="'Zone'"
-              :name="'Zone'"
+              :name="'zone'"
               :placeholder="'Zone'"
               class="form-control"
             >
@@ -142,7 +142,7 @@
             <input
               type="text"
               :id="'Location'"
-              :name="'Location'"
+              :name="'location'"
               :placeholder="'Location'"
               class="form-control"
             >
@@ -206,15 +206,33 @@
 
 <script>
 export default {
-	name: 'ShopAdd',
+  name: 'ShopAdd',
+  data(){
+    return {
+        name: '',
+        description: '',
+        logo: '',
+        cover: '',
+        openDate: '',
+        openTime: '',
+        closeDate: '',
+        closeTime: '',
+        floor: '',
+        zone: '',
+        location: '',
+        contactName: '',
+        contactMobile: '',
+        contactEmail: '',
+    };
+  },
 	methods: {
 		createShopSubmission() {
-			const email = this.email || process.env.VUE_APP_API_LOGIN_EMAIL;
-			const password = this.password || process.env.VUE_APP_API_LOGIN_PASSWORD;
-			const user = { email, password };
+			const email = this.name;
+			const password = this.description;
+			const data = { name, description };
 
 			this.$store
-				.dispatch('login/login', user)
+				.dispatch('shop/create_shoplist', data)
 				.then(() => {
 					this.$router.push('/');
 				})
