@@ -1,17 +1,33 @@
 const mutation = {
-	shoplist_request(state) {
+	get_shoplist_request(state) {
 		state.status = 'loading';
 	},
-	shoplist_success(state, data) {
+	get_shoplist_success(state, data) {
 		state.status = 'success';
 		state.shopList = data;
 	},
-	shoplist_error(state) {
+	get_shoplist_error(state) {
 		state.status = 'error';
 	},
-	logout(state) {
-		state.status = '';
-		state.userToken = '';
+	get_shop_categories_request(state) {
+		state.status = 'loading';
+	},
+	get_shop_categories_success(state, data) {
+		state.status = 'success';
+		state.ShopCategories = data;
+	},
+	get_shop_categories_error(state) {
+		state.status = 'error';
+	},
+	create_shop_request(state) {
+		state.status = 'loading';
+	},
+	create_shop_success(state, data) {
+		state.status = 'success';
+		state.createShop = data;
+	},
+	create_shop_error(state) {
+		state.status = 'error';
 	},
 };
 export default mutation;

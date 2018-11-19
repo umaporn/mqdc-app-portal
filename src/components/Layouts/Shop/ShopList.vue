@@ -4,7 +4,7 @@
 			<div class="card-header">
 				Shop List
 				<router-link tag="button" to="/shop-add" class="btn btn-primary float-right">
-					<i class="fa fa-plus"></i>&nbsp; Add Shop
+					<i class="fa fa-plus"></i>&nbsp; Create New Shop
 				</router-link>
 			</div>
 			<div class="card-body">

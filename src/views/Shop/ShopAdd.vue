@@ -7,7 +7,7 @@
 				<div class="col-sm-4">
 					<div class="page-header float-left">
 						<div class="page-title">
-							<h1>{{ pageName }}</h1>
+							<h1>Creation Shop form</h1>
 						</div>
 					</div>
 				</div>
@@ -24,13 +24,9 @@
 import LeftPanel from '@/components/LeftPanel.vue';
 import HeaderMenu from '@/components/HeaderMenu.vue';
 import ShopAdd from '@/components/Layouts/Shop/ShopAdd.vue';
-import { mapState } from 'vuex';
 
 export default {
-	name: 'shop-list',
-	computed: mapState({
-		pageName: state => state.pageName,
-	}),
+	name: 'shop-creation',
 	components: {
 		LeftPanel,
 		HeaderMenu,

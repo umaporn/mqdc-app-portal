@@ -4,7 +4,7 @@ const action = {
 	authentication({ commit }) {
 		return new Promise((resolve, reject) => {
 			commit('auth_request');
-			axios.post(`http://${process.env.VUE_APP_BASE_URI}/client/authenticate`, {
+			axios.post(`${process.env.VUE_APP_BASE_URI}/client/authenticate`, {
 				username: process.env.VUE_APP_API_USERNAME,
 				password: process.env.VUE_APP_API_PASSWORD,
 			})
