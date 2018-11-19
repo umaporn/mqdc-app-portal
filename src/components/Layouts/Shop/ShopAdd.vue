@@ -395,7 +395,7 @@
                 <div class="form-check">
                   <div class="checkbox" v-for="( value, key, index ) in shopCategories" :key="index">
                     <label for="checkbox1" class="form-check-label" >
-                      <input type="checkbox" :id="value.id" :name="value.name" :value="value.name" class="form-check-input">{{ value.name }} 
+                      <input type="checkbox" :id="value.id" :name="value.name" :value="value.name" class="form-check-input">{{ value.name }}
                     </label>
                   </div>
                 </div>
@@ -405,19 +405,9 @@
               <div class="col col-md-2"><label class=" form-control-label">Tier For Shop</label></div>
               <div class="col col-md-9">
                 <div class="form-check">
-                  <div class="checkbox">
+                  <div class="checkbox" v-for="( value, key, index ) in shopTiers" :key="index">
                     <label for="checkbox1" class="form-check-label ">
-                      <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input"> Option 1
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="checkbox2" class="form-check-label ">
-                      <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> Option 2
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="checkbox3" class="form-check-label ">
-                      <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
+                      <input type="checkbox" :id="value.id" :name="value.name" :value="value.name" class="form-check-input">{{ value.name }}
                     </label>
                   </div>
                 </div>
@@ -447,10 +437,12 @@ export default {
 	computed: {
 		...mapGetters({
 			shopCategories: 'shop/getShopCategories',
-    }),
+			shopTiers: 'shop/getShopTiers',
+		}),
 	},
 	mounted() {
-    this.$store.dispatch('shop/getShopCategories');
+		this.$store.dispatch('shop/getShopCategories');
+		this.$store.dispatch('shop/getShopTiers');
 	},
 	methods: {
 		ShopCreation() {

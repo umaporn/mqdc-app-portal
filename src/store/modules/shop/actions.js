@@ -32,6 +32,22 @@ const action = {
 				});
 		});
 	},
+	getShopTiers({ commit }) {
+		return new Promise((resolve, reject) => {
+			commit('get_tiers_request');
+			axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('userToken')}`;
+			axios.get(`${process.env.VUE_APP_BASE_URI}tiers`)
+				.then((response) => {
+					const data = response.data.data;
+					commit('get_tiers_success', data);
+					resolve(response);
+				})
+				.catch((error) => {
+					commit('get_tiers_error');
+					reject(error);
+				});
+		});
+	},
 	createShop({ commit }) {
 		return new Promise((resolve, reject) => {
 			commit('create_shop_request');
