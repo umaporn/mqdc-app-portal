@@ -10,7 +10,7 @@ const action = {
 					localStorage.setItem('userToken', data.token);
 					localStorage.setItem('userTokenTimestamp', data.expiredAt.timestamp);
 					localStorage.setItem('userEmail', data.userProfile.email);
-					axios.defaults.headers.common.Authorization = data.token;
+					axios.defaults.headers.common.Authorization = `Bearer ${data.token}`;
 					commit('login_success', data);
 					resolve(response);
 				})
