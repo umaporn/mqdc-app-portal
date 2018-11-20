@@ -5,6 +5,13 @@
         <a href="/shop">Shop List</a> / Shop Creation Form
       </div>
       <div class="card-body">
+        <div v-if="errorText" class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+          <span class="badge badge-pill badge-danger">Error</span>
+            {{ errorText }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+				</div>
         <form id="shop-creation" @submit.prevent="ShopCreation">
           <div class="default-tab">
             <nav>
@@ -395,7 +402,14 @@
                 <div class="form-check">
                   <div class="checkbox" v-for="( value, key, index ) in shopCategories" :key="index">
                     <label for="checkbox1" class="form-check-label" >
-                      <input type="checkbox" :id="value.id" :name="value.name" :value="value.name" class="form-check-input">{{ value.name }}
+                      <input
+                        type="checkbox"
+                        :id="value.id"
+                        :model="'categoriesId'"
+                        :name="'categoriesId'"
+                        :value="value.id"
+                        class="form-check-input"
+                      >{{ value.name }}
                     </label>
                   </div>
                 </div>
@@ -407,7 +421,7 @@
                 <div class="form-check">
                   <div class="checkbox" v-for="( value, key, index ) in shopTiers" :key="index">
                     <label for="checkbox1" class="form-check-label ">
-                      <input type="checkbox" :id="value.id" :name="value.name" :value="value.name" class="form-check-input">{{ value.name }}
+                      <input type="checkbox" :id="value.id" :name="'tierId'" :value="value.id" class="form-check-input">{{ value.name }}
                     </label>
                   </div>
                 </div>
@@ -425,7 +439,6 @@
           </div>
         </form>
       </div>
-      </form>
     </div>
   </div>
 </template>
@@ -441,18 +454,22 @@ export default {
 			shopTiers: 'shop/getShopTiers',
 		}),
 	},
+	data() {
+		return {
+			errorText: '',
+			categoriesId: [],
+		};
+  },
 	mounted() {
 		this.$store.dispatch('shop/getShopCategories');
 		this.$store.dispatch('shop/getShopTiers');
 	},
 	methods: {
 		ShopCreation() {
-			const email = this.email || process.env.VUE_APP_API_LOGIN_EMAIL;
-			const password = this.password || process.env.VUE_APP_API_LOGIN_PASSWORD;
-			const user = { email, password };
-
+			const form = document.getElementById('shop-creation');
+			const formData = new FormData(form);
 			this.$store
-				.dispatch('shop/createShop', user)
+				.dispatch('shop/createShop', formData)
 				.then(() => {
 					this.$router.push('/');
 				})

@@ -48,10 +48,10 @@ const action = {
 				});
 		});
 	},
-	createShop({ commit }) {
+	createShop({ commit }, formData) {
 		return new Promise((resolve, reject) => {
 			commit('create_shop_request');
-			axios.post(`${process.env.VUE_APP_BASE_URI}shops`)
+			axios.post(`${process.env.VUE_APP_BASE_URI}shops`, formData)
 				.then((response) => {
 					const data = response.data.data;
 					commit('create_shop_success', data);
