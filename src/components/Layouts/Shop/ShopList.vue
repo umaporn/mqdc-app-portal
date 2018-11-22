@@ -23,7 +23,11 @@
               <th>{{ index }}</th>
               <td>{{ value.id }}</td>
               <td>{{ value.name }}</td>
-              <td class="text-center"><i class="fa fa-edit"></i></td>
+              <td class="text-center">
+								<router-link to="/shop-edit">
+									<i class="fa fa-edit"></i>
+								</router-link>
+							</td>
               <td class="text-center"><i class="fa fa-close"></i></td>
             </tr>
           </tbody>
