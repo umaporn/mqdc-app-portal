@@ -16,28 +16,28 @@
           <div class="default-tab">
             <nav>
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a
-                    class="nav-item nav-link active"
-                    id="nav-home-tab"
-                    data-toggle="tab"
-                    href="#nav-en"
-                    role="tab"
-                    aria-controls="nav-home"
-                    aria-selected="true"
-                  >
-                  English
-                  </a>
-                  <a
-                    class="nav-item nav-link"
-                    id="nav-profile-tab"
-                    data-toggle="tab"
-                    href="#nav-th"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                  >
-                  ไทย
-                  </a>
+                <a
+                  class="nav-item nav-link active"
+                  id="nav-home-tab"
+                  data-toggle="tab"
+                  href="#nav-en"
+                  role="tab"
+                  aria-controls="nav-home"
+                  aria-selected="true"
+                >
+                English
+                </a>
+                <a
+                  class="nav-item nav-link"
+                  id="nav-profile-tab"
+                  data-toggle="tab"
+                  href="#nav-th"
+                  role="tab"
+                  aria-controls="nav-profile"
+                  aria-selected="false"
+                >
+                ไทย
+                </a>
               </div>
             </nav>
             <div class="tab-content pl-3 pt-2" id="nav-tabContent">
@@ -364,7 +364,6 @@
               </div>
             </div>
             <div class="col-12">
-
             <hr>
             <div class="row form-group">
             <div class="col col-md-2">
@@ -427,14 +426,14 @@
                 </div>
               </div>
             </div>
-            </div>
-            <div>
+            <div class="row">
               <button type="submit" class="btn btn-primary btn-sm">
                 <i class="fa fa-paper-plane"></i> Submit
               </button>
               <button type="reset" class="btn btn-danger btn-sm">
                 <i class="fa fa-ban"></i> Reset
               </button>
+            </div>
             </div>
           </div>
         </form>
@@ -459,7 +458,7 @@ export default {
 			errorText: '',
 			categoriesId: [],
 		};
-  },
+	},
 	mounted() {
 		this.$store.dispatch('shop/getShopCategories');
 		this.$store.dispatch('shop/getShopTiers');
